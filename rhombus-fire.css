@@ -1,0 +1,207 @@
+.rhombus-fire {
+	position: absolute;
+	bottom: 95%;
+	left: 50%;
+	width: 50px;
+	height: 50px;
+	margin-left: -25px;
+	animation: 7s linear 0s normal none infinite rf-tremble;
+}
+	.rhombus-fire s {
+		position: absolute;
+		top: 0;
+		left: 50%;
+		display: block;
+		width: 100%;
+		height: 100%;
+		overflow: visible;
+		transform: translate(-50%, 0);
+		animation-name: rf-sparkposy1, rf-sparkscale1;
+		animation-duration: 3s;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		z-index: 100;
+	}
+		.rhombus-fire s:after {
+			content: '';
+			position: absolute;
+			left: 0;
+			display: block;
+			width: 100%;
+			height: 100%;
+			background-color: rgba(250,221,0,1);
+			transform: scale(0.65,1) rotate(45deg);
+			animation-name: rf-sparkcolor, rf-sparkposx1;
+			animation-duration: 3s;
+			animation-iteration-count: infinite;
+			animation-timing-function: linear;
+		}
+
+	.rhombus-fire s:nth-child(2) {
+		animation-delay: -0.8s;
+		z-index: 90;
+	}
+		.rhombus-fire s:nth-child(2):after {
+			animation-delay: -0.8s;
+		}
+
+	.rhombus-fire s:nth-child(3) {
+		width: 85%;
+		height: 85%;
+		animation-delay: -1.5s;
+		z-index: 80;
+	}
+		.rhombus-fire s:nth-child(3):after {
+			animation-name: rf-sparkposx2, rf-sparkcolor;
+			animation-delay: -1.5s;
+		}
+
+	.rhombus-fire s:nth-child(4) {
+		animation-delay: -2.2s;
+		z-index: 75;
+	}
+		.rhombus-fire s:nth-child(4):after {
+			animation-delay: -2.2s;
+		}
+	
+	.rhombus-fire s:nth-child(5) {
+		margin-top: -40%;
+		margin-left: 14%;
+		animation-name: rf-sparkposy2, rf-sparkscale2;
+		animation-delay: -0.3s;
+		animation-duration: 1.8s;
+		z-index: 70;
+	}
+		.rhombus-fire s:nth-child(5):after {
+			animation-delay: -0.3s;
+			animation-duration: 1.8s;
+		}
+
+	.rhombus-fire s:nth-child(6) {
+		margin-top: -36%;
+		margin-left: -8%;
+		animation-name: rf-sparkposy2, rf-sparkscale2;
+		animation-duration: 1.8s;
+		animation-delay: -0.7s;
+		z-index: 60;
+	}
+		.rhombus-fire s:nth-child(6):after {
+			animation-name: rf-sparkposx2, rf-sparkcolor;
+			animation-duration: 1.8s;
+			animation-delay: -0.7s;
+		}
+
+	.rhombus-fire s:nth-child(7) {
+		margin-top: -44%;
+		margin-left: -10%;
+		animation-name: rf-sparkposy2, rf-sparkscale2;
+		animation-duration: 1.9s;
+		animation-delay: -1.2s;
+		z-index: 60;
+	}
+		.rhombus-fire s:nth-child(7):after {
+			animation-duration: 1.9s;
+			animation-delay: -1.2s;
+		}
+
+
+@keyframes rf-sparkcolor {
+	0%, 25% {
+		background-color: rgba(250,221,0,0.9);
+	}
+	40% {
+		background-color: rgba(255,41,8,0.8);
+	}
+	50% {
+		background-color: rgba(255,41,8,0.7);
+	}
+	90% {
+		background-color: rgba(255,41,8,0.6);
+	}
+	96% {
+		background-color: rgba(255,255,255,0.2);
+	}
+	100% {
+		background-color: rgba(255,255,255,0);
+	}
+}
+@keyframes rf-sparkposx1 {
+	0%, 100% {
+		left: 0;
+	}
+	50% {
+		left: 20%;
+	}
+}
+@keyframes rf-sparkposx2 {
+	0%, 100% {
+		left: 0;
+	}
+	50% {
+		left: -20%;
+	}
+}
+@keyframes rf-sparkposy1 {
+	0% {
+		top: 0%;
+	}
+	25% {
+		top: -75%;
+	}
+	100% {
+		top: -200%;
+	}
+}
+@keyframes rf-sparkposy2 {
+	0% {
+		top: 0%;
+	}
+	100% {
+		top: -170%;
+	}
+}
+
+@keyframes rf-sparkscale1 {
+	0% {
+		width: 30%;
+		height: 30%;
+	}
+	25% {
+		width: 100%;
+		height: 100%;
+	}
+	45% {
+		width: 40%;
+		height: 40%;
+	}
+	100% {
+		width: 10%;
+		height: 10%;
+	}
+}
+@keyframes rf-sparkscale2 {
+	0%, 100% {
+		width: 10%;
+		height: 10%;
+	}
+	20% {
+		width: 40%;
+		height: 40%;
+	}
+	40% {
+		width: 20%;
+		height: 20%;
+	}
+}
+
+@keyframes rf-tremble {
+	0%, 50%, 100% {
+		transform: skewX(0deg);
+	}
+	40%, 95% {
+		transform: skewX(2deg);
+	}
+	45%, 90% {
+		transform: skewX(-2deg);
+	}
+}
