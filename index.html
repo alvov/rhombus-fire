@@ -3,17 +3,22 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Rhombus Fire</title>
+	<link rel="stylesheet" href="http://yui.yahooapis.com/3.14.1/build/cssreset/cssreset-min.css">
 	<link rel="stylesheet" href="rhombus-fire.css">
 	<link rel="stylesheet" href="style.css">
+	<script src="prefixfree.min.js"></script>
 </head>
 <body>
 	<div class="layout">
-		<label class="column">
-			<input type="checkbox">
-			<div class="rhombus-fire"><s></s><s></s><s></s><s></s><s></s><s></s><s></s></div>
-		</label>
-		<label class="column">
-			<input type="checkbox" checked="checked">
+		<div class="control-panel">
+			<fieldset class="switcher">
+				<input type="radio" name="fire-color" id="sw-b-0-0" checked value="red">
+				<label class="bulb" for="sw-b-0-0">red</label>
+				<input type="radio" name="fire-color" id="sw-b-0-1" value="blue">
+				<label class="bulb" for="sw-b-0-1">blue</label>
+			</fieldset>
+		</div>
+		<div class="column">
 			<div class="rhombus-fire">
 				<s></s>
 				<s></s>
@@ -23,11 +28,23 @@
 				<s></s>
 				<s></s>
 			</div>
-		</label>
-		<label class="column">
-			<input type="checkbox">
-			<div class="rhombus-fire"><s></s><s></s><s></s><s></s><s></s><s></s><s></s></div>
-		</label>
+		</div>
 	</div>
+	<script>
+		( function(){
+			var switchers = document.querySelectorAll( '.switcher input' ),
+				fire = document.querySelectorAll( '.rhombus-fire' ),
+				handleSwitcherChange = function(){
+					fire[0].className = 'rhombus-fire ' + this.value;
+				},
+				i = 0, l = switchers.length;
+			for ( ; i < l; i++ ) {
+				switchers[i].addEventListener( 'change', handleSwitcherChange, false );
+				if ( switchers[i].checked ) {
+					handleSwitcherChange.apply( switchers[i] );
+				}
+			}
+		} )();
+	</script>
 </body>
 </html>

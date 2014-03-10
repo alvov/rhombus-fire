@@ -1,10 +1,11 @@
 .rhombus-fire {
 	position: absolute;
-	bottom: 95%;
+	bottom: 100%;
 	left: 50%;
-	width: 50px;
-	height: 50px;
-	margin-left: -25px;
+	width: 100px;
+	height: 100px;
+	margin-left: -50px;
+	margin-bottom: -50px;
 	animation: 7s linear 0s normal none infinite rf-tremble;
 }
 	.rhombus-fire s {
@@ -21,6 +22,7 @@
 		animation-iteration-count: infinite;
 		animation-timing-function: linear;
 		z-index: 100;
+		border-radius: 3px;
 	}
 		.rhombus-fire s:after {
 			content: '';
@@ -103,6 +105,16 @@
 			animation-duration: 1.9s;
 			animation-delay: -1.2s;
 		}
+/* blue fire */
+.rhombus-fire.blue s:after {
+	animation-name: rf-sparkcolor-blue, rf-sparkposx1;
+}
+.rhombus-fire.blue s:nth-child(3):after {
+	animation-name: rf-sparkposx2, rf-sparkcolor-blue;
+}
+.rhombus-fire.blue s:nth-child(6):after {
+	animation-name: rf-sparkposx2, rf-sparkcolor-blue;
+}
 
 
 @keyframes rf-sparkcolor {
@@ -117,6 +129,26 @@
 	}
 	90% {
 		background-color: rgba(255,41,8,0.6);
+	}
+	96% {
+		background-color: rgba(255,255,255,0.2);
+	}
+	100% {
+		background-color: rgba(255,255,255,0);
+	}
+}
+@keyframes rf-sparkcolor-blue {
+	0%, 25% {
+		background-color: rgba(0,174,255,0.9);
+	}
+	40% {
+		background-color: rgba(36,0,198,0.8);
+	}
+	50% {
+		background-color: rgba(36,0,198,0.7);
+	}
+	90% {
+		background-color: rgba(36,0,198,0.6);
 	}
 	96% {
 		background-color: rgba(255,255,255,0.2);

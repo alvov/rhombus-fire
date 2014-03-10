@@ -12,31 +12,54 @@ html, body {
 }
 .column {
 	position: absolute;
-	top: 30%;
 	left: 50%;
 	bottom: 0;
-	width: 16px;
+	width: 36px;
+	height: 130px;
 	transform: translate(-50%,0);
 	background-color: #fff;
 	background: linear-gradient(to right, #111111 0%,#555555 27%,#eeeeee 70%,#333333 100%);
-	cursor: pointer;
 }
-.column:first-child {
-	top: 35%;
-	left: 45%;
-}	
-.column:last-child {
-	top: 40%;
-	left: 55%;
+	
+
+.control-panel {
+	position: absolute;
+	bottom: 0;
+	left: 0;
 }
-	.column input {
-		position: absolute;
-		left: -4753px;
+	.control-panel label {
+		font-size: 10px;
+		color: #6F617C;
+		text-shadow: 0 1px 0 #fff;
 	}
-	.column .rhombus-fire {
-		opacity: 0;
-		transition: opacity 1s ease;
+	.control-panel fieldset {
+		padding: 5px 16px;
+		background-color: #c9c9c9;
+		border: 0 none;
 	}
-	.column input:checked + .rhombus-fire {
-		opacity: 1;
+		.control-panel fieldset input {
+			position: absolute;
+			left: -4753px;
+		}
+	.bulb {
+		position: relative;
+		display: block;
+		padding-left: 10px;
+		cursor: pointer;
 	}
+		.bulb:before {
+			content: '';
+			position: absolute;
+			top: 50%;
+			left: 0;
+			width: 6px;
+			height: 6px;
+			border-radius: 50%;
+			background-color: #1e6600;
+			transform: translate(0,-50%);
+			transition: all 0.1s linear;
+		}
+		input[type="radio"]:checked + .bulb:before {
+			background-color: #32c900;
+			box-shadow: 0 0 4px #32c900;
+		}
