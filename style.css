@@ -20,12 +20,23 @@ html, body {
 	background-color: #fff;
 	background: linear-gradient(to right, #111111 0%,#555555 27%,#eeeeee 70%,#333333 100%);
 }
-	
+	.column .rhombus-fire {
+		display: none;
+	}
+	.column .rhombus-fire.red,
+	.column .rhombus-fire.blue {
+		display: block;
+	}
 
 .control-panel {
 	position: absolute;
 	bottom: 0;
 	left: 0;
+	opacity: 0;
+	transition: opacity 0.2s linear;
+}
+.control-panel:hover {
+	opacity: 1;
 }
 	.control-panel label {
 		font-size: 10px;
@@ -57,7 +68,7 @@ html, body {
 			border-radius: 50%;
 			background-color: #1e6600;
 			transform: translate(0,-50%);
-			transition: all 0.1s linear;
+			transition: background-color 0.1s linear;
 		}
 		input[type="radio"]:checked + .bulb:before {
 			background-color: #32c900;

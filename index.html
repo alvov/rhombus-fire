@@ -12,7 +12,7 @@
 	<div class="layout">
 		<div class="control-panel">
 			<fieldset class="switcher">
-				<input type="radio" name="fire-color" id="sw-b-0-0" checked value="red">
+				<input type="radio" name="fire-color" id="sw-b-0-0" value="red">
 				<label class="bulb" for="sw-b-0-0">red</label>
 				<input type="radio" name="fire-color" id="sw-b-0-1" value="blue">
 				<label class="bulb" for="sw-b-0-1">blue</label>
@@ -34,16 +34,18 @@
 		( function(){
 			var switchers = document.querySelectorAll( '.switcher input' ),
 				fire = document.querySelectorAll( '.rhombus-fire' ),
+				// script for switchers fieldset
 				handleSwitcherChange = function(){
 					fire[0].className = 'rhombus-fire ' + this.value;
 				},
-				i = 0, l = switchers.length;
+				i = 0, l = switchers.length,
+				r = Math.round( Math.random() );				
 			for ( ; i < l; i++ ) {
 				switchers[i].addEventListener( 'change', handleSwitcherChange, false );
-				if ( switchers[i].checked ) {
-					handleSwitcherChange.apply( switchers[i] );
-				}
 			}
+			// random fire color scheme
+			switchers[r].checked = true;
+			handleSwitcherChange.apply( switchers[r] );
 		} )();
 	</script>
 </body>
