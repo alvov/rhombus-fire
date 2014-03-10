@@ -20,15 +20,6 @@ html, body {
 	background-color: #fff;
 	background: linear-gradient(to right, #111111 0%,#555555 27%,#eeeeee 70%,#333333 100%);
 }
-	.column .rhombus-fire {
-		opacity: 0;
-		/* hack for chrome */
-		-webkit-transition: opacity 0.5s linear 0.5s;
-	}
-	.column .rhombus-fire.red,
-	.column .rhombus-fire.blue {
-		opacity: 1;
-	}
 
 .control-panel {
 	position: absolute;
